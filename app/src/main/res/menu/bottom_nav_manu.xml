@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/acads"
+        android:title="academics"
+        android:icon="@drawable/ic_acads" />
+
+    <item
+        android:id="@+id/assignment"
+        android:title="assignments"
+        android:icon="@drawable/ic_assignments" />
+
+    <item
+        android:id="@+id/axios"
+        android:title="Axios"
+        android:icon="@drawable/ic_axios" />
+
+    <item
+        android:id="@+id/cultural"
+        android:title="cultural"
+        android:icon="@drawable/ic_clubs" />
+
+
+
+
+
+</menu>

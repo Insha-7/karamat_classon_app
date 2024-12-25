@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skin"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="logo"
+            android:src="@drawable/img_1"
+            tools:ignore="HardcodedText" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All your classes at a glance"
+            android:textSize="28sp"
+            android:fontFamily="casual"
+            android:textColor="@color/darkblue"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <Button
+        android:id="@+id/btnmain"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button"
+        android:fontFamily="casual"
+        android:text="Get started"
+        android:textAlignment="center"
+        android:textColor="@color/darkblue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>
