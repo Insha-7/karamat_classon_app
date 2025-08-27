@@ -36,6 +36,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version = "1.0.0" }
+google-material    = { module = "com.google.android.material:material", version = "1.9.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
