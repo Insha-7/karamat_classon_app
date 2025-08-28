@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/acads"
-        android:title="academics"
+        android:title="Academics"
         android:icon="@drawable/ic_acads" />
 
     <item
-        android:id="@+id/assignment"
-        android:title="assignments"
-        android:icon="@drawable/ic_assignments" />
+        android:id="@+id/announcement"
+        android:title="announcements"
+        android:icon="@drawable/ic_announcement" />
 
     <item
         android:id="@+id/axios"

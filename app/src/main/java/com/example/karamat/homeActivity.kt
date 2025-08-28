@@ -2,9 +2,11 @@ package com.example.karamat
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -13,19 +15,31 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val viewPager = findViewById<ViewPager2>(R.id.viewPager)
-        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        // Adapter with Fragments for each day
-        val adapter = ViewPagerAdapter(this)
-        viewPager.adapter = adapter
+        loadFragment(AcademicsFragment())
 
-        val days = listOf("Mon", "Tue", "Wed", "Thu", "Fri")
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.acads -> {
+                    loadFragment(AcademicsFragment())
+                    true
+                }
+                R.id.axios -> {
+                    loadFragment(AxiosFragment())
+                    true
+                }
+                else -> false
+            }
+        }
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = days[position]
-        }.attach()
 
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
 
