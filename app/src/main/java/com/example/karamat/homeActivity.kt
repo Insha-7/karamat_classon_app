@@ -29,6 +29,14 @@ class HomeActivity : AppCompatActivity() {
                     loadFragment(AxiosFragment())
                     true
                 }
+                R.id.announcement -> {
+                    loadFragment(AnnouncemntsFragment())
+                    true
+                }
+                R.id.cultural -> {
+                    loadFragment(EventFragment())
+                    true
+                }
                 else -> false
             }
         }

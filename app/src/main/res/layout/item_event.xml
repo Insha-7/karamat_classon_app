@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/skin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+
+    <ImageView
+        android:id="@+id/eventIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="announcemnt icon"
+        android:src="@drawable/ic_culture_circle" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+    <TextView
+        android:id="@+id/eventTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Title"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/eventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date: "
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/eventTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time: "
+
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/eventVenue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Venue" />
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
