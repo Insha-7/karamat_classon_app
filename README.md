@@ -4,23 +4,38 @@ Classon is an Android app designed to help students manage their academic and ex
 
 ## Features
 
-- **Personalized Timetable:**  
-  View class schedules for each weekday, including both academics and extracurriculars (Axios).
-  
-- **Class Reminders:**  
-  Get notifications before classes start, so you never miss an important session.
-  
-- **Announcements:**  
-  Stay up-to-date with academic announcements such as assignments, exams, and lab practicals.
-  
-- **Events Section:**  
-  Discover upcoming events (e.g., cultural fests, sports matches) with details like date, time, venue, and event type.
-  
-- **User Authentication:**  
-  Simple login and signup flow for secure access.
-  
-- **Bottom Navigation:**  
-  Easily switch between Academics, Axios, Announcements, and Cultural Events.
+- **Sign In and Sign Up Pages:**  
+  Secure and user-friendly authentication to register or log in to the app.
+
+- **Swipable and Scrollable Academics Section:**  
+  View your academic class schedule for each weekday in a tabbed, swipeable view. Each day’s timetable is scrollable for easy exploration.
+
+- **Swipable and Scrollable Axios Section:**  
+  Similar to academics, the Axios section presents extracurricular schedules in a swipeable, scrollable, day-wise view.
+
+- **Expandable Cards for Announcements:**  
+  Announcements (like assignments, exams, deadlines) are shown in expandable cards—tap any card to view more details.
+
+- **Scrollable Cultural Events Section:**  
+  Explore upcoming cultural events in a vertically scrollable list, each card displaying event details like date, time, venue, and type.
+
+- **Bottom Navigation Menu:**  
+  Quickly switch between Academics, Axios, Announcements, and Cultural Events using a modern bottom navigation bar.
+
+- **Class & Assignment Notifications:**  
+  Get timely notifications before classes and assignment deadlines using Android’s built-in notification system (Notification API).
+
+- **Day-wise Timetable with Tabs:**  
+  Both Academics and Axios sections use tab layouts for weekdays, letting users swipe between different days.
+
+- **Material Design UI:**  
+  The app uses Android Material Components for a clean and intuitive interface.
+
+- **RecyclerView-based Lists:**  
+  All lists (events, announcements, timetable) are implemented with RecyclerView for smooth scrolling and efficient memory usage.
+
+- **Fragment-based Navigation:**  
+  Each major section is implemented as a fragment, ensuring smooth navigation and modular code.
 
 ## Tech Stack
 
@@ -28,7 +43,7 @@ Classon is an Android app designed to help students manage their academic and ex
 - **Android SDK** — Native Android app development.
 - **ViewPager2 & RecyclerView** — For swiping between days and displaying lists.
 - **Material Components** — For modern UI and navigation.
-- **Notifications API** — To send timely reminders for classes and assignments.
+- **Android Notification System (Notification API)** — Uses Android’s notification API to remind users about classes and assignments.
 
 ## Screens/Fragments
 
@@ -37,7 +52,7 @@ Classon is an Android app designed to help students manage their academic and ex
 - **Axios:**  
   Track extracurricular schedules just like academic ones.
 - **Announcements:**  
-  View assignments and exam notifications.
+  View assignments and exam notifications in expandable cards.
 - **Cultural Events:**  
   Browse and get details about upcoming events.
 
@@ -59,4 +74,3 @@ Classon is an Android app designed to help students manage their academic and ex
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ---
-
