@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.time.DayOfWeek
+import java.time.LocalTime
 
 class TimeTableFragment : Fragment(R.layout.fragment_time_table) {
 
@@ -51,16 +53,23 @@ class TimeTableFragment : Fragment(R.layout.fragment_time_table) {
 
         recyclerView.adapter = ItemTimeTableAdapter(timetableData)
 
+        NotificationScheduler.scheduleAll(requireContext(), timetableData)
+
     }
 
     private fun getAcademicsData(dayIndex: Int): List<ItemTimeTable> {
 
         val data = listOf(
-            ItemTimeTable("10:10 am", "11:00 am", "DBMS", "lab", "118", "Shubhra Jain"),
-            ItemTimeTable("11:10 am", "12:10 pm", "WDA", "theory", "118", "Prashant Singh"),
-            ItemTimeTable("2:30 pm", "3:30 pm", "CTP", "theory", "MSTeams", "Bibek Singh"),
-            ItemTimeTable("4:00 pm", "5:00 pm", "SPORTS", "class", "Wifi Garden", "Aditya Kumar"),
-            ItemTimeTable("5:00 pm", "6:00 pm", "PC", "theory", "GMeet", "Abha Dixit")
+            ItemTimeTable("DBMS", "lab", "118", "Shubhra Jain",
+                DayOfWeek.MONDAY, LocalTime.of(10, 10), LocalTime.of(11, 0)),
+            ItemTimeTable("WDA", "theory", "118", "Prashant Singh",
+                DayOfWeek.MONDAY, LocalTime.of(11, 10), LocalTime.of(12, 10)),
+            ItemTimeTable("CTP", "theory", "MSTeams", "Bibek Singh",
+                DayOfWeek.MONDAY, LocalTime.of(14, 30), LocalTime.of(15, 30)),
+            ItemTimeTable("SPORTS", "class", "Wifi Garden", "Aditya Kumar",
+                DayOfWeek.MONDAY, LocalTime.of(15, 40), LocalTime.of(17, 0)),
+            ItemTimeTable("PC", "theory", "GMeet", "Abha Dixit",
+                DayOfWeek.MONDAY, LocalTime.of(15, 50), LocalTime.of(18, 0))
         )
 
         return when (dayIndex) {
@@ -76,11 +85,16 @@ class TimeTableFragment : Fragment(R.layout.fragment_time_table) {
     private fun getAxiosData(dayIndex: Int): List<ItemTimeTable> {
 
         val data = listOf(
-            ItemTimeTable("10:10 am", "11:00 am", "APP", "lab", "118", "Shubhra Jain"),
-            ItemTimeTable("11:10 am", "12:10 pm", "WEB", "theory", "118", "Prashant Singh"),
-            ItemTimeTable("2:30 pm", "3:30 pm", "CP", "theory", "MSTeams", "Bibek Singh"),
-            ItemTimeTable("4:00 pm", "5:00 pm", "ML", "class", "Wifi Garden", "Aditya Kumar"),
-            ItemTimeTable("5:00 pm", "6:00 pm", "WEB3", "theory", "GMeet", "Abha Dixit")
+            ItemTimeTable("APP", "lab", "118", "Shubhra Jain",
+                DayOfWeek.MONDAY, LocalTime.of(10, 10), LocalTime.of(11, 0)),
+            ItemTimeTable("WEB", "theory", "118", "Prashant Singh",
+                DayOfWeek.MONDAY, LocalTime.of(11, 10), LocalTime.of(12, 10)),
+            ItemTimeTable("CP", "theory", "MSTeams", "Bibek Singh",
+                DayOfWeek.MONDAY, LocalTime.of(14, 30), LocalTime.of(15, 30)),
+            ItemTimeTable("ML", "class", "Wifi Garden", "Aditya Kumar",
+                DayOfWeek.MONDAY, LocalTime.of(15, 35), LocalTime.of(17, 0)),
+            ItemTimeTable("WEB3", "theory", "GMeet", "Abha Dixit",
+                DayOfWeek.MONDAY, LocalTime.of(15, 55), LocalTime.of(18, 0))
         )
 
         return when (dayIndex) {
