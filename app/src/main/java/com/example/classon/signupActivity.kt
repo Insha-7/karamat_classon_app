@@ -29,6 +29,7 @@ class SignupActivity : AppCompatActivity() {
         textsignin.setOnClickListener {
             Intent(this,LoginActivity::class.java).also{
                 startActivity(it)
+                finish()
             }
         }
 
@@ -65,7 +66,9 @@ class SignupActivity : AppCompatActivity() {
                 .addOnCompleteListener { task: com.google.android.gms.tasks.Task<com.google.firebase.auth.AuthResult> ->
                     if (task.isSuccessful) {
                         showToast("Signup successful!")
-                        startActivity(Intent(this, HomeActivity::class.java))
+                        val intent = Intent(this, HomeActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
                         finish()
                     } else {
                         showToast("Signup failed: ${task.exception?.message}")
