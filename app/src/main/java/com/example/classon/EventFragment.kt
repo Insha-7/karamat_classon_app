@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import java.time.LocalDate
 import java.time.LocalTime
 
-class EventFragment : Fragment(R.layout.fragment_event) {
+class
+EventFragment : Fragment(R.layout.fragment_event) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
