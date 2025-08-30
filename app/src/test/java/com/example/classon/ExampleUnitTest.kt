@@ -1,4 +1,4 @@
-package com.example.karamat
+package com.example.classon
 
 import org.junit.Test
 

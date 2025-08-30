@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.karamat"
+    namespace = "com.example.classon"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.karamat"
+        applicationId = "com.example.classon"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

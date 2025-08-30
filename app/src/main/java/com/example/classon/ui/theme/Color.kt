@@ -1,4 +1,4 @@
-package com.example.karamat.ui.theme
+package com.example.classon.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

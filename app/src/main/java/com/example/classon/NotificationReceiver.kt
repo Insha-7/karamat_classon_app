@@ -1,4 +1,4 @@
-package com.example.karamat
+package com.example.classon
 
 import android.Manifest
 import android.content.BroadcastReceiver

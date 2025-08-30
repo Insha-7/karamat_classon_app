@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">karamat</string>
+    <string name="app_name">classon</string>
     <string name="date">Date: %1$s</string>
     <string name="announcement_start_time">Start: %1$s</string>
     <string name="announcement_end_time">End: %1$s</string>

@@ -1,4 +1,4 @@
-package com.example.karamat
+package com.example.classon
 
 import java.time.DayOfWeek
 import java.time.LocalTime

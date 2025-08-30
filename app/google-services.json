@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259283753898",
+    "project_id": "classon-6d4f4",
+    "storage_bucket": "classon-6d4f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259283753898:android:7476bfaf5613c7463629d3",
+        "android_client_info": {
+          "package_name": "com.example.classon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZszq6lcf739HI6hnXZ0JJ3TTwG9CD-rM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

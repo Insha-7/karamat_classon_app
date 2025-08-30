@@ -1,15 +1,13 @@
-package com.example.karamat
+package com.example.classon
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class AxiosFragment : Fragment(R.layout.fragment_axios) {
+class AcademicsFragment : Fragment(R.layout.fragment_academics) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -17,7 +15,7 @@ class AxiosFragment : Fragment(R.layout.fragment_axios) {
         val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
 
         // Adapter with Fragments for each day
-        val adapter = ViewPagerAdapter(requireActivity(), "axios")
+        val adapter = ViewPagerAdapter(requireActivity(), "academics")
         viewPager.adapter = adapter
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -26,5 +24,4 @@ class AxiosFragment : Fragment(R.layout.fragment_axios) {
         }.attach()
 
     }
-
 }
