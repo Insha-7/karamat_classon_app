@@ -5,20 +5,17 @@ import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 data class ItemTimeTable(
-    var subject: String,
-    var type: String,
-    var location: String,
-    var teacher: String,
-    var dayOfWeek: DayOfWeek,
-    var startLocalTime: LocalTime,
-    var endLocalTime: LocalTime)
-    {
-        // Computed properties for UI display
-        val startTime: String
-        get() = startLocalTime.format(DateTimeFormatter.ofPattern("hh:mm a"))
+    var subject: String? = null,
+    var type: String? = null,
+    var location: String? = null,
+    var teacher: String? = null,
+    var dayOfWeek: DayOfWeek? = null,
+    var startLocalTime: LocalTime? = null,
+    var endLocalTime: LocalTime? = null
+) {
+    val startTime: String
+        get() = startLocalTime?.format(DateTimeFormatter.ofPattern("hh:mm a")) ?: "--"
 
-        val endTime: String
-        get() = endLocalTime.format(DateTimeFormatter.ofPattern("hh:mm a"))
-    }
-
-
+    val endTime: String
+        get() = endLocalTime?.format(DateTimeFormatter.ofPattern("hh:mm a")) ?: "--"
+}

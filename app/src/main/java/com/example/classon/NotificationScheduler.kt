@@ -1,5 +1,4 @@
 package com.example.classon
-
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -18,6 +17,12 @@ object NotificationScheduler {
     }
 
     private fun scheduleNotification(context: Context, item: ItemTimeTable) {
+        // Skip if required fields are null
+        if (item.dayOfWeek == null || item.startLocalTime == null) {
+            Log.d("NotificationScheduler", "Skipping notification for ${item.subject} - missing day or time")
+            return
+        }
+        
         val now = ZonedDateTime.now()
 
         // find the date of the *next* occurrence of the given day
@@ -33,8 +38,8 @@ object NotificationScheduler {
         if (notifyTime.isBefore(now)) return
 
         val intent = Intent(context, NotificationReceiver::class.java).apply {
-            putExtra("subject", item.subject)
-            putExtra("location", item.location)
+            putExtra("subject", item.subject ?: "Unknown Subject")
+            putExtra("location", item.location ?: "Unknown Location")
         }
 
         val pendingIntent = PendingIntent.getBroadcast(
