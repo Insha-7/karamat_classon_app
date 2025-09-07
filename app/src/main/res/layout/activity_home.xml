@@ -63,6 +63,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_manu" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/geminiButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        app:srcCompat="@drawable/ic_gemini"
+        app:fabSize="normal"
+        app:useCompatPadding="true"
+        app:backgroundTint="@color/white"
+        app:tint="@null"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_anchorGravity="top|end"/>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
