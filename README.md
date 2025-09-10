@@ -1,60 +1,65 @@
 # Classon App
 
-Classon is an Android app designed to help students manage their academic and extracurricular schedules efficiently. The app provides an integrated platform for class reminders, announcements, event tracking, and timetable management.
+Classon is a student-centric Android app built to streamline academic life and extracurricular engagement. The app now offers seamless Google sign-in, cloud-based data management via Firestore, and an AI-powered Gemini chatbot for instant student support.
 
 ## Features
 
-- **Sign In and Sign Up Pages:**  
-  Secure and user-friendly authentication to register or log in to the app.
+- **Google Account Authentication:**  
+  Log in and sign up securely using your Google account. No need to remember new passwords—just use your existing credentials for fast, reliable access.
 
-- **Swipable and Scrollable Academics Section:**  
-  View your academic class schedule for each weekday in a tabbed, swipeable view. Each day’s timetable is scrollable for easy exploration.
+- **Real-Time Cloud Sync with Firestore:**  
+  Your schedules, assignments, announcements, and event data are instantly synced and stored in the cloud, ensuring access across devices and zero risk of data loss.
 
-- **Swipable and Scrollable Axios Section:**  
-  Similar to academics, the Axios section presents extracurricular schedules in a swipeable, scrollable, day-wise view.
+- **Gemini AI Chatbot Assistance:**  
+  Have questions about your timetable, assignments, or events? Ask the integrated Gemini chatbot for quick answers, reminders, and smart suggestions—right inside the app.
 
-- **Expandable Cards for Announcements:**  
-  Announcements (like assignments, exams, deadlines) are shown in expandable cards—tap any card to view more details.
+- **Personalized Academic Timetable:**  
+  View your daily and weekly class schedules with a swipeable tab layout. Customize your classes and see updates in real time.
 
-- **Scrollable Cultural Events Section:**  
-  Explore upcoming cultural events in a vertically scrollable list, each card displaying event details like date, time, venue, and type.
+- **Extracurricular (Axios) Management:**  
+  Organize and track club meetings, sports, and other activities in a dedicated, swipeable section.
 
-- **Bottom Navigation Menu:**  
-  Quickly switch between Academics, Axios, Announcements, and Cultural Events using a modern bottom navigation bar.
+- **Interactive Announcements:**  
+  Assignments, exams, and important messages are presented in expandable cards. Tap to reveal details and mark items as complete.
 
-- **Class & Assignment Notifications:**  
-  Get timely notifications before classes and assignment deadlines using Android’s built-in notification system (Notification API).
+- **Cultural Events Explorer:**  
+  Browse upcoming campus events, with each event card showing date, time, venue, and type. Never miss out on what’s happening!
 
-- **Day-wise Timetable with Tabs:**  
-  Both Academics and Axios sections use tab layouts for weekdays, letting users swipe between different days.
+- **Automatic Class & Assignment Notifications:**  
+  Receive timely reminders for classes, assignment deadlines, and events. Notifications are personalized based on your schedule.
 
-- **Material Design UI:**  
-  The app uses Android Material Components for a clean and intuitive interface.
+- **Modern Material Design UI:**  
+  Experience a clean, intuitive interface built with Android Material Components for effortless navigation.
 
-- **RecyclerView-based Lists:**  
-  All lists (events, announcements, timetable) are implemented with RecyclerView for smooth scrolling and efficient memory usage.
+- **Efficient, Smooth Lists:**  
+  All lists (classes, announcements, events) use RecyclerView for quick, responsive scrolling—even with large amounts of data.
 
-- **Fragment-based Navigation:**  
-  Each major section is implemented as a fragment, ensuring smooth navigation and modular code.
+- **Modular Fragment Navigation:**  
+  Each app section is a separate fragment, making navigation fast and the codebase robust.
 
 ## Tech Stack
 
 - **Kotlin** — Main programming language for app logic.
 - **Android SDK** — Native Android app development.
-- **ViewPager2 & RecyclerView** — For swiping between days and displaying lists.
+- **Google Sign-In API** — For secure authentication.
+- **Firestore** — Cloud database for instant data sync.
+- **Gemini Chatbot API** — AI-powered in-app help/chat.
+- **ViewPager2 & RecyclerView** — For smooth navigation and lists.
 - **Material Components** — For modern UI and navigation.
-- **Android Notification System (Notification API)** — Uses Android’s notification API to remind users about classes and assignments.
+- **Android Notification System** — Custom reminders for classes and assignments.
 
 ## Screens/Fragments
 
 - **Academics:**  
-  Swipe through daily class schedules for the week.
+  Daily/weekly class schedules with real-time updates.
 - **Axios:**  
-  Track extracurricular schedules just like academic ones.
+  Extracurricular schedules and club tracking.
 - **Announcements:**  
-  View assignments and exam notifications in expandable cards.
+  Assignments, exams, and deadlines in expandable cards.
 - **Cultural Events:**  
-  Browse and get details about upcoming events.
+  Campus events explorer.
+- **Gemini Chatbot:**  
+  AI chat interface for support and Q&A.
 
 ## Getting Started
 
@@ -67,7 +72,9 @@ Classon is an Android app designed to help students manage their academic and ex
 
 ## Permissions
 
-- Notification permissions are required for class reminders.
+- Notification permissions for reminders.
+- Google account access for authentication.
+- Internet access for cloud sync and chatbot.
 
 ## Contributing
 
