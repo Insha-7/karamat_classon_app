@@ -5,10 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import java.time.format.DateTimeFormatter
 
-class AnnouncementAdapter(private val announcements: List<Announcement>) :
+class AnnouncementAdapter(private val announcements: List<Announcement>, private val lifecycleOwner: LifecycleOwner) :
     RecyclerView.Adapter<AnnouncementAdapter.AnnouncementViewHolder>() {
 
     inner class AnnouncementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -18,6 +22,8 @@ class AnnouncementAdapter(private val announcements: List<Announcement>) :
         val endTime: TextView = itemView.findViewById(R.id.announcementEndTime)
         val description: TextView = itemView.findViewById(R.id.announcementDescription)
         val detailsLayout: LinearLayout = itemView.findViewById(R.id.detailsLayout)
+        val youtubePlayerView: YouTubePlayerView = itemView.findViewById(R.id.youtubePlayerView)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementViewHolder {
@@ -71,6 +77,25 @@ class AnnouncementAdapter(private val announcements: List<Announcement>) :
             holder.description.visibility = View.VISIBLE
         } else {
             holder.description.visibility = View.GONE
+        }
+
+        val sampleVideoId = when {
+            announcement.title.contains("DBMS", true) -> "OMwgGL3lHlI"
+            announcement.title.contains("OS", true) -> "kK7L2ISGucM"
+            announcement.title.contains("CP", true) -> "OMcxQ3IY-qc"
+            else -> null
+        }
+
+        if (sampleVideoId != null) {
+            holder.youtubePlayerView.visibility = View.VISIBLE
+            lifecycleOwner.lifecycle.addObserver(holder.youtubePlayerView)
+            holder.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+                override fun onReady(youTubePlayer: YouTubePlayer) {
+                    youTubePlayer.cueVideo(sampleVideoId, 0f)
+                }
+            })
+        } else {
+            holder.youtubePlayerView.visibility = View.GONE
         }
 
         // Expand/Collapse toggle

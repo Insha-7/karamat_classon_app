@@ -20,6 +20,8 @@ object FirestoreRepository {
             .uppercase()
 
         sb.appendLine("Today is $today.")
+        val now = java.time.LocalTime.now()
+        sb.appendLine("Current time is ${now.hour}:${now.minute}.")
         sb.appendLine("Here is the timetable data for all days:\n")
 
         for (source in sources) {

@@ -37,7 +37,6 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         super.onStop()
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.VISIBLE
         requireActivity().findViewById<FloatingActionButton>(R.id.geminiButton).visibility = View.VISIBLE
-
     }
 
 
@@ -57,6 +56,8 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             if (text.isNotEmpty()) {
                 val message = ChatMessage(text, isUser = true)
                 messages.add(message)
+                chatadapter.notifyItemInserted(messages.size - 1)
+                messages.add(ChatMessage("", isTyping = true))
                 chatadapter.notifyItemInserted(messages.size - 1)
                 recyclerView.scrollToPosition(messages.size - 1)
                 userInput.text.clear()
@@ -80,6 +81,16 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
                                 append("4. If asked about 'free time', compute gaps longer than 1 hour between classes.\n")
                                 append("5. Show free time before first class and after last class too.\n")
                                 append("6. Be concise, but always complete.\n\n")
+                                append("7. If the user asks 'when is my next class' or similar, calculate it based on the current time provided.\n")
+                                append("8. Keep the answers natural.")
+                                append("Tone instructions:\n")
+                                append(" - Respond naturally and conversationally.\n")
+                                append(" - You can use friendly phrasing, like 'Looks like your next class is...' or 'You have... coming up soon!'\n")
+                                append(" - Avoid repeating the day if it is already implied.\n")
+                                append(" - Keep it concise but supportive and student-friendly.\n\n")
+                                append("When answering, feel free to use casual phrases like 'Looks like', 'You have', 'Your next class is', etc. Format using short sentences or bullet points if helpful.\n")
+
+
 
                                 append("=== TIMETABLE CONTEXT START ===\n")
                                 append(contextText)
@@ -101,6 +112,11 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
                         val answer = GeminiRepository.askGemini(prompt)
 
                         withContext(Dispatchers.Main) {
+                            if (messages.lastOrNull()?.isTyping == true) {
+                                messages.removeAt(messages.size - 1)
+                                chatadapter.notifyItemRemoved(messages.size)
+                            }
+
                             messages.add(ChatMessage(answer, isUser = false))
                             chatadapter.notifyItemInserted(messages.size - 1)
                             recyclerView.scrollToPosition(messages.size - 1)
@@ -108,6 +124,10 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
                     } catch (t: Throwable) {
                         t.printStackTrace()
                         withContext(Dispatchers.Main) {
+                            if (messages.lastOrNull()?.isTyping == true) {
+                                messages.removeAt(messages.size - 1)
+                                chatadapter.notifyItemRemoved(messages.size)
+                            }
                             messages.add(ChatMessage("⚠️ Something went wrong while connecting AI.", isUser = false))
                             chatadapter.notifyItemInserted(messages.size - 1)
                         }

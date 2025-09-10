@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:fontFamily="serif"
-        android:shadowColor="@color/purple_700"
+        android:shadowColor="@color/darkblue"
         android:shadowRadius="3"
         android:text="Sign Up"
         android:textColor="@color/darkblue"
@@ -123,7 +123,7 @@
 
     <Button
         android:id="@+id/btnsignup"
-        android:layout_width="160dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:background="@drawable/button"

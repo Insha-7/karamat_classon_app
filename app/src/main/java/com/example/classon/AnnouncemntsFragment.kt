@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -32,11 +33,11 @@ class AnnouncemntsFragment : Fragment(R.layout.fragment_announcemnts) {
                 type = "exam"
             ),
             Announcement(
-                title = "DBMS Assignment",
+                title = "CP lab exam",
                 date = LocalDate.of(2025, 9, 2),   // LocalDate instead of string
                 endTime = LocalTime.of(23, 59),
-                description = "Submit PDF on LMS",
-                type = "assignment"
+                description = "Syllabus: Till STL",
+                type = "exam"
             ),
             Announcement(
                 title = "OS Lab Test",
@@ -83,7 +84,8 @@ class AnnouncemntsFragment : Fragment(R.layout.fragment_announcemnts) {
         // Bind RecyclerView
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = AnnouncementAdapter(announcements)
+        recyclerView.adapter = AnnouncementAdapter(announcements, viewLifecycleOwner)
+//        lifecycle.addObserver(view.findViewById<YouTubePlayerView>(R.id.youtubePlayerView))
 
     }
 }

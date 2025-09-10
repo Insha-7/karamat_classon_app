@@ -57,53 +57,6 @@ class TimeTableFragment : Fragment(R.layout.fragment_time_table) {
 
         timetableListeners[day]?.remove()
 
-        // First, let's check if the source document exists
-//        db.collection("timetables")
-//            .document(source)
-//            .get()
-//            .addOnSuccessListener { sourceDoc ->
-//                android.util.Log.d("TimeTableFragment", "Source document '$source' exists: ${sourceDoc.exists()}")
-//                if (sourceDoc.exists()) {
-//                    android.util.Log.d("TimeTableFragment", "Source document data: ${sourceDoc.data}")
-//                }
-//
-//                // Now check if programs collection exists
-//                db.collection("timetables")
-//                    .document(source)
-//                    .collection("programs")
-//                    .get()
-//                    .addOnSuccessListener { programsSnapshot ->
-//                        android.util.Log.d("TimeTableFragment", "Programs collection size: ${programsSnapshot.size()}")
-//                        for (doc in programsSnapshot.documents) {
-//                            android.util.Log.d("TimeTableFragment", "Program document: ${doc.id}")
-//                        }
-//
-//                        // Now try to get the actual slots
-//                        db.collection("timetables")
-//                            .document(source)
-//                            .collection("programs")
-//                            .document("CS_2024")
-//                            .collection("days")
-//                            .document(day)
-//                            .collection("slots")
-//                            .get()
-//                            .addOnSuccessListener { result ->
-//                                android.util.Log.d("TimeTableFragment", "Firestore query successful. Found ${result.size()} documents")
-//                                processSlots(result, dayOfWeekName, recyclerView)
-//                            }
-//                            .addOnFailureListener { e ->
-//                                android.util.Log.e("TimeTableFragment", "Firestore query failed", e)
-//                                e.printStackTrace()
-//                            }
-//                    }
-//                    .addOnFailureListener { e ->
-//                        android.util.Log.e("TimeTableFragment", "Failed to get programs collection", e)
-//                    }
-//            }
-//            .addOnFailureListener { e ->
-//                android.util.Log.e("TimeTableFragment", "Failed to get source document", e)
-//            }
-
         val slotsref = db.collection("timetables")
             .document(source)
             .collection("programs")
@@ -168,7 +121,6 @@ class TimeTableFragment : Fragment(R.layout.fragment_time_table) {
         
         if (items.isEmpty()) {
             android.util.Log.d("TimeTableFragment", "No timetable data found")
-            // Create a placeholder item to show "No classes today"
             val placeholderItems = listOf(
                 ItemTimeTable(
                     subject = "No classes scheduled",
